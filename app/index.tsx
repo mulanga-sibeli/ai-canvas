@@ -1,6 +1,6 @@
-import { ThemedText } from "../components/ThemedText";
-import { ThemedInput } from "../components/ThemedInput";
-import { Button } from "../components/Button";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedInput } from "@/components/ThemedInput";
+import { Button } from "@/components/Button";
 
 import { ScrollView, Platform, Pressable, View } from "react-native";
 import React, {LegacyRef, useEffect, useRef, useState} from "react";
@@ -11,8 +11,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import axios from "axios";
 
-import { MathJaxConfig } from "../configs/Mathjax";
-import { Point } from "../types/Point";
+import { MathJaxConfig } from "@/configs/Mathjax";
+import { Point } from "@/types/Point";
 import { TransformationType } from "../types/TransformationType"
 import { CanvasState } from "../types/CanvasState";
 import { DrawMode } from "../types/DrawMode";

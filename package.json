@@ -1,0 +1,39 @@
+{
+  "name": "ai-canvas",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~3.2.3",
+    "@expo/vector-icons": "^14.0.3",
+    "@types/react": "~18.2.79",
+    "axios": "^1.7.8",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "better-react-mathjax": "^2.0.4-beta1",
+    "dotenv": "^16.4.5",
+    "expo": "^52.0.11",
+    "expo-dom": "^27.0.2",
+    "expo-router": "^3.1.0",
+    "expo-splash-screen": "^0.29.13",
+    "expo-status-bar": "~1.12.1",
+    "expo-web-browser": "~13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-paper": "^5.12.5",
+    "react-native-web": "~0.19.10",
+    "save-dev": "^0.0.1-security",
+    "typescript": "~5.3.3",
+    "webpack-config": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "typescript": "~5.3.3"
+  },
+  "private": true
+}

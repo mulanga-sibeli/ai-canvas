@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a98ef69c-4bfd-49f9-b336-e9f750553748" name="Changes" comment="Added configs and default expo assets">
+      <change beforePath="$PROJECT_DIR$/ai-canvas/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/app/_layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/app/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/adaptive-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/partial-react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/react-logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/react-logo@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/components/Button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/components/TextEditorInput.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/components/ThemedInput.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/components/ThemedText.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/components/ThemedView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/configs/Mathjax.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/constants/CanvasConfigValues.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/constants/Colors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/hooks/useColorScheme.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/hooks/useColorScheme.web.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/hooks/useThemeColor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/styles/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/types/CanvasState.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/types/DrawMode.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/types/Point.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/types/TransformationType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/Circle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/CustomCanvas.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/FreeHand.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/Shape.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/TransformationMatrix.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-canvas/webpack.config.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2p7cGZgup159bV9cBwzT0OOvnsX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/mulanga/workspace/ai-canvas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/mulanga/workspace/ai-canvas/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/assets/fonts" />
+      <recent name="$PROJECT_DIR$/hooks" />
+      <recent name="$PROJECT_DIR$/components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-RM-242.23726.97" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a98ef69c-4bfd-49f9-b336-e9f750553748" name="Changes" comment="" />
+      <created>1732120459455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732120459455</updated>
+      <workItem from="1732120460496" duration="43000" />
+      <workItem from="1732602653690" duration="8044000" />
+      <workItem from="1732644506670" duration="4922000" />
+      <workItem from="1732809733966" duration="1153000" />
+      <workItem from="1732816000652" duration="327000" />
+      <workItem from="1732816607345" duration="1641000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added Poppins variants">
+      <option name="closed" value="true" />
+      <created>1732809797925</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732809797925</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Mathjax config">
+      <option name="closed" value="true" />
+      <created>1732809825636</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732809825636</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added classes, interfaces, enums and constants to handle drawing and transformation logic">
+      <option name="closed" value="true" />
+      <created>1732809915846</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732809915846</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added components for UI">
+      <option name="closed" value="true" />
+      <created>1732809942799</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732809942799</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated gitignore and package lock file">
+      <option name="closed" value="true" />
+      <created>1732810005003</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732810005003</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added styling for index drawing screen">
+      <option name="closed" value="true" />
+      <created>1732810029666</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732810029666</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added start file and canvas page">
+      <option name="closed" value="true" />
+      <created>1732810057568</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732810057568</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added configs and default expo assets">
+      <option name="closed" value="true" />
+      <created>1732810163187</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732810163187</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Poppins variants" />
+    <MESSAGE value="Added Mathjax config" />
+    <MESSAGE value="Added classes, interfaces, enums and constants to handle drawing and transformation logic" />
+    <MESSAGE value="Added components for UI" />
+    <MESSAGE value="Updated gitignore and package lock file" />
+    <MESSAGE value="Added styling for index drawing screen" />
+    <MESSAGE value="Added start file and canvas page" />
+    <MESSAGE value="Added configs and default expo assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added configs and default expo assets" />
+  </component>
+</project>
