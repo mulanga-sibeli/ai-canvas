@@ -1,5 +1,3 @@
-import { BlurView } from "expo-blur";
-import { LinearGradient } from "expo-linear-gradient";
 import { StyleSheet, TextInputProps, KeyboardAvoidingView } from "react-native";
 import { TextInput } from "react-native-paper";
 import {ThemedView} from "@/components/ThemedView";
