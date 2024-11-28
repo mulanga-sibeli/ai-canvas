@@ -2,7 +2,6 @@ import { StyleSheet, type ViewProps } from "react-native";
 import { Dispatch, SetStateAction } from "react";
 import { ThemedView } from "./ThemedView";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { ThemedText } from "./ThemedText";
 import { TextInput } from "react-native-paper";
 
 export type ThemedInputProps = ViewProps & {
