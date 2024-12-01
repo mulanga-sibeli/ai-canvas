@@ -1,11 +1,11 @@
 import { Shape } from "./Shape";
-import {Point} from "../types/Point";
+import { Point } from "../types/Point";
 
 export class FreeHand extends Shape {
     path: Point[];
 
-    constructor(startPoint: Point) {
-        super(startPoint);
+    constructor(startPoint: Point, strokeWidth?: number, strokeColor?: string) {
+        super(startPoint, strokeWidth, strokeColor);
         this.path = [];
     }
 
@@ -29,6 +29,7 @@ export class FreeHand extends Shape {
             const secondLastPoint = this.path[this.path.length - 2];
             ctx.quadraticCurveTo(secondLastPoint.x, secondLastPoint.y, lastPoint.x, lastPoint.y);
             ctx.lineWidth = this.strokeWidth;
+            ctx.strokeStyle = this.strokeColor;
             ctx.stroke();
         }
     }

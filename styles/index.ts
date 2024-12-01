@@ -42,14 +42,18 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         position: 'absolute',
-        display: 'flex',
-        flexDirection: 'row',
         backgroundColor: 'whitesmoke',
     },
+    canvasDrawOptionsSection: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 10,
+    },
     canvasDrawOption: {
-        padding: 5,
-        borderRadius: 10,
-        backgroundColor: 'whitesmoke',
+        flex: 1,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
     },
     canvas:{
         flex: 7,

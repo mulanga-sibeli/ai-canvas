@@ -23,10 +23,10 @@ export class Shape {
     latestTransform: TransformationType | null;
     transformMatrix: TransformMatrix;
 
-    constructor(startPoint: Point) {
+    constructor(startPoint: Point, strokeWidth?: number, strokeColor?: string) {
         this.id = Math.random().toString();
-        this.strokeWidth = 3;
-        this.strokeColor = "black";
+        this.strokeWidth = strokeWidth || 3;
+        this.strokeColor = strokeColor || "black";
         this.boundingCorners = [];
         this.startPoint = startPoint;
         this.isSelected = false;
