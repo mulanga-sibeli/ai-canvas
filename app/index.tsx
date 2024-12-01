@@ -7,7 +7,7 @@ import React, {LegacyRef, useEffect, useRef, useState} from "react";
 
 import { router } from "expo-router";
 import { MathJaxContext, MathJax } from 'better-react-mathjax';
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import {FontAwesome, FontAwesome6, MaterialCommunityIcons} from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import axios from "axios";
 
@@ -38,6 +38,18 @@ export default function SpacePage() {
     const setDrawMode = (mode: DrawMode) => {
         if (canvasRef.current){
             canvasRef.current.drawingMode = mode;
+        }
+    };
+
+    const setStrokeColor = (color: string) => {
+        if (canvasRef.current){
+            canvasRef.current.strokeColor = color;
+        }
+    };
+
+    const setStrokeWidth = (width: number) => {
+        if (canvasRef.current){
+            canvasRef.current.strokeWidth = width;
         }
     };
 
@@ -190,13 +202,10 @@ export default function SpacePage() {
                             if (!currentShape){
                                 switch(canvas.drawingMode){
                                     case DrawMode.Circle:
-                                        currentShape = new Circle(startPoint);
+                                        currentShape = new Circle(startPoint, 0, canvas.strokeWidth, canvas.strokeColor);
                                         break;
                                     case DrawMode.Freehand:
-                                        currentShape = new FreeHand(startPoint);
-                                        break;
-                                    // default:
-                                    //     currentShape = new Circle(startPoint);
+                                        currentShape = new FreeHand(startPoint, canvas.strokeWidth, canvas.strokeColor);
                                 }
                             };
                             currentShape?.drawShape(ctx, [currentPoint]);
@@ -262,10 +271,10 @@ export default function SpacePage() {
                     weight="SemiBold"
                     lightColor="gray"
                 >
-                    Math Playground
+                    Playground
                 </ThemedText>
             </ThemedView>
-            <ThemedView style={[styles.contentSectionContent]}>
+            <ThemedView style={styles.contentSectionContent}>
                 <ThemedView style={styles.leftPanel}>
                     <ThemedView style={styles.sidePanelButton}>
                         <Button
@@ -288,42 +297,104 @@ export default function SpacePage() {
                 </ThemedView>
                 <ThemedView style={styles.canvas}>
                     <ThemedView style={styles.canvasDrawOptions}>
-                        <Pressable
-                            onPress={ () => setDrawMode(DrawMode.Freehand) }
-                            style={styles.canvasDrawOption}
+                        <ThemedText
+                            type="Caption"
+                            weight="Regular"
+                            lightColor="gray"
                         >
-                            <MaterialCommunityIcons name="draw" size={14} color="black" />
-                            <ThemedText
-                                type="Caption"
-                                weight="Regular"
-                                lightColor="gray"
+                            Shape
+                        </ThemedText>
+                        <ThemedView style={styles.canvasDrawOptionsSection}>
+                            <Pressable
+                                onPress={() => setDrawMode(DrawMode.Freehand)}
+                                style={styles.canvasDrawOption}
                             >
-                                Draw
-                            </ThemedText>
-                        </Pressable>
-                        <Pressable
-                            onPress={() => setDrawMode(DrawMode.Circle)}
-                            style={styles.canvasDrawOption}
+                                <MaterialCommunityIcons name="draw" size={14} color="black" />
+                                <ThemedText
+                                    type="Caption"
+                                    weight="Regular"
+                                    lightColor="gray"
+                                >
+                                    Draw
+                                </ThemedText>
+                            </Pressable>
+                            <Pressable
+                                onPress={() => setDrawMode(DrawMode.Circle)}
+                                style={styles.canvasDrawOption}
+                            >
+                                <MaterialIcons name="circle" size={14} color="black" />
+                                <ThemedText
+                                    type="Caption"
+                                    weight="Regular"
+                                    lightColor="gray"
+                                >
+                                    Circle
+                                </ThemedText>
+                            </Pressable>
+                        </ThemedView>
+                        <ThemedText
+                            type="Caption"
+                            weight="Regular"
+                            lightColor="gray"
                         >
-                            <MaterialIcons name="circle" size={14} color="black" />
-                            <ThemedText
-                                type="Caption"
-                                weight="Regular"
-                                lightColor="gray"
+                            Line Width
+                        </ThemedText>
+                        <ThemedView style={styles.canvasDrawOptionsSection}>
+                            <Pressable
+                                onPress={() => setStrokeWidth(5)}
+                                style={styles.canvasDrawOption}
                             >
-                                Circle
-                            </ThemedText>
-                        </Pressable>
+                                <MaterialIcons name="circle" size={7} color="black" />
+                                <ThemedText
+                                    type="Caption"
+                                    weight="Regular"
+                                    lightColor="gray"
+                                >
+                                    5px
+                                </ThemedText>
+                            </Pressable>
+                            <Pressable
+                                onPress={() => setStrokeWidth(10)}
+                                style={styles.canvasDrawOption}
+                            >
+                                <MaterialIcons name="circle" size={14} color="black" />
+                                <ThemedText
+                                    type="Caption"
+                                    weight="Regular"
+                                    lightColor="gray"
+                                >
+                                    10px
+                                </ThemedText>
+                            </Pressable>
+                        </ThemedView>
+                        <ThemedText
+                            type="Caption"
+                            weight="Regular"
+                            lightColor="gray"
+                        >
+                            Color
+                        </ThemedText>
+                        <ThemedView style={styles.canvasDrawOptionsSection}>
+                            <Pressable
+                                onPress={() => setStrokeColor("black")}
+                                style={styles.canvasDrawOption}
+                            >
+                                <FontAwesome name="square" size={20} color="black" />
+                            </Pressable>
+                            <Pressable
+                                onPress={() => setStrokeColor("green")}
+                                style={styles.canvasDrawOption}
+                            >
+                                <FontAwesome name="square" size={20} color="green" />
+                            </Pressable>
+                        </ThemedView>
                     </ThemedView>
 
-                    { Platform.OS == "web" && (
-                        <canvas
-                            id="ai-canvas"
-                            ref={canvasRef as LegacyRef<HTMLCanvasElement>}
-                            style={{ width: "100%", height: "100%", display: "block" }}
-                        />
-                    )
-                    }
+                    <canvas
+                        id="ai-canvas"
+                        ref={canvasRef as LegacyRef<HTMLCanvasElement>}
+                        style={{ width: "100%", height: "100%", display: "block" }}
+                    />
                     {/*<TextEditorInput*/}
                     {/*  heading={heading}*/}
                     {/*  setHeading={setHeading}*/}

@@ -8,8 +8,8 @@ import { Colors } from "../constants/Colors";
 export class Circle extends Shape {
     radius: number;
 
-    constructor(startPoint: Point, radius?: number) {
-        super(startPoint);
+    constructor(startPoint: Point, radius?: number, strokeWidth?: number, strokeColor?: string) {
+        super(startPoint, strokeWidth, strokeColor);
         this.radius = radius || 0;
     }
 
@@ -101,6 +101,8 @@ export class Circle extends Shape {
         }
 
         ctx.arc(this.startPoint.x, this.startPoint.y, this.radius, 0, 2 * Math.PI);
+        ctx.lineWidth = this.strokeWidth;
+        ctx.strokeStyle = this.strokeColor;
         ctx.stroke();
     }
 
