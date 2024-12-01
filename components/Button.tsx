@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, ViewProps } from "react-native";
 
 import { useThemeColor } from "@/hooks/useThemeColor";
 import { ThemedText } from "@/components/ThemedText";
+import React from "react";
 
 export type ButtonProps = ViewProps & {
   lightColor?: string;

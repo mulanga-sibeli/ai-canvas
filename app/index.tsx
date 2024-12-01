@@ -96,6 +96,7 @@ export default function SpacePage() {
                 canvas.height = screenHeight * dpr;
                 canvas.style.width = `${screenWidth}px`;
                 canvas.style.height = `${screenHeight}px`;
+                canvas.drawingMode = DrawMode.Freehand;
 
                 const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
                 ctx.scale(dpr, dpr);
