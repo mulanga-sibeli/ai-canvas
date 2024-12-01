@@ -5,5 +5,5 @@ export class CustomCanvasElement extends (typeof window !== "undefined" ? HTMLCa
     shapes : Shape[] = [];
     drawingMode: DrawMode = DrawMode.Circle;
     strokeColor: string = "black";
-    strokeWidth: number = 3;
+    strokeWidth: number = 1;
 }
