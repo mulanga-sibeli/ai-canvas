@@ -49,12 +49,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         gap: 10,
     },
-    canvasDrawOption: {
-        flex: 1,
-        padding: 10,
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-    },
     canvas:{
         flex: 7,
     },

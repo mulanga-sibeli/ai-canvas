@@ -8,7 +8,7 @@ import React, {LegacyRef, useEffect, useRef, useState} from "react";
 
 import {router} from "expo-router";
 import {MathJax, MathJaxContext} from 'better-react-mathjax';
-import {FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
+import {Entypo, FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import axios from "axios";
 
@@ -279,7 +279,7 @@ export default function SpacePage() {
                 <ThemedView style={styles.leftPanel}>
                     <ThemedView style={styles.sidePanelButton}>
                         <Button
-                            title="Note"
+                            title="Text Editor"
                             type="regular"
                             lightColor="transparent"
                             lightTextColor="white"
@@ -288,7 +288,7 @@ export default function SpacePage() {
                     </ThemedView>
                     <ThemedView style={styles.sidePanelButton}>
                         <Button
-                            title="Creta"
+                            title="Canvas"
                             type="regular"
                             lightColor="transparent"
                             lightTextColor="white"
@@ -303,32 +303,28 @@ export default function SpacePage() {
                             weight="Regular"
                             lightColor="gray"
                         >
-                            Shape
+                            Mode
                         </ThemedText>
                         <ThemedView style={styles.canvasDrawOptionsSection}>
                             <DrawOption
-                                    tooltip={'Draw'}
                                     actionFunction={()=>setDrawMode(DrawMode.Freehand)}
                                     icon={<MaterialCommunityIcons name="draw" size={14} color="black" />} />
                             <DrawOption
-                                    tooltip={'Circle'}
                                     actionFunction={()=>setDrawMode(DrawMode.Circle)}
-                                    icon={<MaterialCommunityIcons name="circle" size={14} color="black" />} />
+                                    icon={<Entypo name="circle" size={14} color="black" />} />
                         </ThemedView>
                         <ThemedText
                             type="Caption"
                             weight="Regular"
                             lightColor="gray"
                         >
-                            Line Width
+                            Width
                         </ThemedText>
                         <ThemedView style={styles.canvasDrawOptionsSection}>
                             <DrawOption
-                                tooltip={'1'}
                                 actionFunction={()=>setStrokeWidth(1)}
                                 icon={<MaterialIcons name="circle" size={7} color="black" />} />
                             <DrawOption
-                                tooltip={'5'}
                                 actionFunction={()=>setStrokeWidth(5)}
                                 icon={<MaterialCommunityIcons name="circle" size={14} color="black" />} />
                         </ThemedView>
