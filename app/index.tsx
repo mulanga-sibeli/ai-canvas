@@ -1,30 +1,31 @@
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedInput } from "@/components/ThemedInput";
-import { Button } from "@/components/Button";
+import {ThemedText} from "@/components/ThemedText";
+import {ThemedInput} from "@/components/ThemedInput";
+import {Button} from "@/components/Button";
+import {DrawOption} from "@/components/DrawOption";
 
-import { ScrollView, Platform, Pressable, View } from "react-native";
+import {Platform, Pressable, ScrollView, View} from "react-native";
 import React, {LegacyRef, useEffect, useRef, useState} from "react";
 
-import { router } from "expo-router";
-import { MathJaxContext, MathJax } from 'better-react-mathjax';
-import {FontAwesome, FontAwesome6, MaterialCommunityIcons} from "@expo/vector-icons";
+import {router} from "expo-router";
+import {MathJax, MathJaxContext} from 'better-react-mathjax';
+import {FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import axios from "axios";
 
-import { MathJaxConfig } from "@/configs/Mathjax";
-import { Point } from "@/types/Point";
-import { TransformationType } from "../types/TransformationType"
-import { CanvasState } from "../types/CanvasState";
-import { DrawMode } from "../types/DrawMode";
-import { CanvasConstants } from "../constants/CanvasConfigValues";
+import {MathJaxConfig} from "@/configs/Mathjax";
+import {Point} from "@/types/Point";
+import {TransformationType} from "../types/TransformationType"
+import {CanvasState} from "../types/CanvasState";
+import {DrawMode} from "../types/DrawMode";
+import {CanvasConstants} from "../constants/CanvasConfigValues";
 
-import { Circle } from "../utils/Circle";
-import { FreeHand } from "../utils/FreeHand";
-import { Shape } from "../utils/Shape";
-import { CustomCanvasElement } from "../utils/CustomCanvas";
+import {Circle} from "../utils/Circle";
+import {FreeHand} from "../utils/FreeHand";
+import {Shape} from "../utils/Shape";
+import {CustomCanvasElement} from "../utils/CustomCanvas";
 import {ThemedView} from "../components/ThemedView";
 
-import { styles } from "../styles/index";
+import {styles} from "../styles/Index";
 
 export default function SpacePage() {
     const apiKey = process.env.EXPO_PUBLIC_OPENAI_API_KEY;
@@ -305,32 +306,14 @@ export default function SpacePage() {
                             Shape
                         </ThemedText>
                         <ThemedView style={styles.canvasDrawOptionsSection}>
-                            <Pressable
-                                onPress={() => setDrawMode(DrawMode.Freehand)}
-                                style={styles.canvasDrawOption}
-                            >
-                                <MaterialCommunityIcons name="draw" size={14} color="black" />
-                                <ThemedText
-                                    type="Caption"
-                                    weight="Regular"
-                                    lightColor="gray"
-                                >
-                                    Draw
-                                </ThemedText>
-                            </Pressable>
-                            <Pressable
-                                onPress={() => setDrawMode(DrawMode.Circle)}
-                                style={styles.canvasDrawOption}
-                            >
-                                <MaterialIcons name="circle" size={14} color="black" />
-                                <ThemedText
-                                    type="Caption"
-                                    weight="Regular"
-                                    lightColor="gray"
-                                >
-                                    Circle
-                                </ThemedText>
-                            </Pressable>
+                            <DrawOption
+                                    tooltip={'Draw'}
+                                    actionFunction={()=>setDrawMode(DrawMode.Freehand)}
+                                    icon={<MaterialCommunityIcons name="draw" size={14} color="black" />} />
+                            <DrawOption
+                                    tooltip={'Circle'}
+                                    actionFunction={()=>setDrawMode(DrawMode.Circle)}
+                                    icon={<MaterialCommunityIcons name="circle" size={14} color="black" />} />
                         </ThemedView>
                         <ThemedText
                             type="Caption"
@@ -340,32 +323,14 @@ export default function SpacePage() {
                             Line Width
                         </ThemedText>
                         <ThemedView style={styles.canvasDrawOptionsSection}>
-                            <Pressable
-                                onPress={() => setStrokeWidth(5)}
-                                style={styles.canvasDrawOption}
-                            >
-                                <MaterialIcons name="circle" size={7} color="black" />
-                                <ThemedText
-                                    type="Caption"
-                                    weight="Regular"
-                                    lightColor="gray"
-                                >
-                                    5px
-                                </ThemedText>
-                            </Pressable>
-                            <Pressable
-                                onPress={() => setStrokeWidth(10)}
-                                style={styles.canvasDrawOption}
-                            >
-                                <MaterialIcons name="circle" size={14} color="black" />
-                                <ThemedText
-                                    type="Caption"
-                                    weight="Regular"
-                                    lightColor="gray"
-                                >
-                                    10px
-                                </ThemedText>
-                            </Pressable>
+                            <DrawOption
+                                tooltip={'1'}
+                                actionFunction={()=>setStrokeWidth(1)}
+                                icon={<MaterialIcons name="circle" size={7} color="black" />} />
+                            <DrawOption
+                                tooltip={'5'}
+                                actionFunction={()=>setStrokeWidth(5)}
+                                icon={<MaterialCommunityIcons name="circle" size={14} color="black" />} />
                         </ThemedView>
                         <ThemedText
                             type="Caption"
@@ -375,18 +340,12 @@ export default function SpacePage() {
                             Color
                         </ThemedText>
                         <ThemedView style={styles.canvasDrawOptionsSection}>
-                            <Pressable
-                                onPress={() => setStrokeColor("black")}
-                                style={styles.canvasDrawOption}
-                            >
-                                <FontAwesome name="square" size={20} color="black" />
-                            </Pressable>
-                            <Pressable
-                                onPress={() => setStrokeColor("green")}
-                                style={styles.canvasDrawOption}
-                            >
-                                <FontAwesome name="square" size={20} color="green" />
-                            </Pressable>
+                            <DrawOption
+                                actionFunction={() => setStrokeColor("black")}
+                                icon={<FontAwesome name="square" size={20} color="black" />} />
+                            <DrawOption
+                                actionFunction={() => setStrokeColor("green")}
+                                icon={<FontAwesome name="square" size={20} color="green" />} />
                         </ThemedView>
                     </ThemedView>
 
