@@ -101,6 +101,8 @@ export default function SpacePage() {
                 ctx.scale(dpr, dpr);
                 ctx.fillStyle = "white";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.lineCap = "round";
+                ctx.lineJoin = "round";
 
                 let startPoint: Point;
                 let moveTrace: Point[] = [];
@@ -192,8 +194,8 @@ export default function SpacePage() {
                                     case DrawMode.Freehand:
                                         currentShape = new FreeHand(startPoint);
                                         break;
-                                    default:
-                                        currentShape = new Circle(startPoint);
+                                    // default:
+                                    //     currentShape = new Circle(startPoint);
                                 }
                             };
                             currentShape?.drawShape(ctx, [currentPoint]);
@@ -321,7 +323,6 @@ export default function SpacePage() {
                         />
                     )
                     }
-
                     {/*<TextEditorInput*/}
                     {/*  heading={heading}*/}
                     {/*  setHeading={setHeading}*/}

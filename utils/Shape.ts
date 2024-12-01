@@ -25,7 +25,7 @@ export class Shape {
 
     constructor(startPoint: Point) {
         this.id = Math.random().toString();
-        this.strokeWidth = 1;
+        this.strokeWidth = 3;
         this.strokeColor = "black";
         this.boundingCorners = [];
         this.startPoint = startPoint;

@@ -5,60 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a98ef69c-4bfd-49f9-b336-e9f750553748" name="Changes" comment="Added configs and default expo assets">
-      <change beforePath="$PROJECT_DIR$/ai-canvas/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/app/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/app/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/fonts/Poppins-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/adaptive-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/partial-react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/react-logo@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/react-logo@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/assets/images/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/components/Button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/components/TextEditorInput.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/components/ThemedInput.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/components/ThemedText.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/components/ThemedView.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/configs/Mathjax.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/constants/CanvasConfigValues.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/constants/Colors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/hooks/useColorScheme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/hooks/useColorScheme.web.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/hooks/useThemeColor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/styles/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/types/CanvasState.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/types/DrawMode.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/types/Point.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/types/TransformationType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/Circle.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/CustomCanvas.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/FreeHand.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/Shape.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/utils/TransformationMatrix.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-canvas/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/FreeHand.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/FreeHand.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/Shape.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/Shape.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,20 +26,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/mulanga/workspace/ai-canvas",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/mulanga/workspace/ai-canvas/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mulanga/workspace/animated-experience&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/mulanga/workspace/ai-canvas/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -124,6 +74,8 @@
       <workItem from="1732809733966" duration="1153000" />
       <workItem from="1732816000652" duration="327000" />
       <workItem from="1732816607345" duration="1641000" />
+      <workItem from="1732869107992" duration="17000" />
+      <workItem from="1733044207464" duration="1315000" />
     </task>
     <task id="LOCAL-00001" summary="Added Poppins variants">
       <option name="closed" value="true" />
