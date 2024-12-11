@@ -54,6 +54,18 @@ export class TransformMatrix {
         return this.multiply(new TransformMatrix(cos, sin, -sin, cos, 0, 0));
     }
 
+    scale(sx: number, sy: number, origin: Point = { x: 0, y: 0 }): TransformMatrix {
+        const { x, y } = origin;
+        return this.multiply(
+            new TransformMatrix(
+                sx, 0,
+                0, sy,
+                x - sx * x, y - sy * y
+            )
+        );
+    }
+
+
     transformPoint(point: Point): Point {
         return {
             x: this.a * point.x + this.c * point.y + this.e,

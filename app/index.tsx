@@ -3,7 +3,7 @@ import {ThemedInput} from "@/components/ThemedInput";
 import {Button} from "@/components/Button";
 import {DrawOption} from "@/components/DrawOption";
 
-import {Platform, Pressable, ScrollView, View} from "react-native";
+import {Platform, ScrollView, View} from "react-native";
 import React, {LegacyRef, useEffect, useRef, useState} from "react";
 
 import {router} from "expo-router";
@@ -183,8 +183,16 @@ export default function SpacePage() {
                         case CanvasState.PreTransform:
                             canvasState = CanvasState.Transforming;
                             if (selectedShape) {
-                                if (selectedShape.isTransformHandleSelected) selectedShape.latestTransform = TransformationType.Rotation;
-                                else selectedShape.latestTransform = TransformationType.Translation;
+                                switch(true){
+                                    case selectedShape.isTransformHandleSelected:
+                                        selectedShape.latestTransform = TransformationType.Rotation;
+                                        break;
+                                    case selectedShape.isBorderSelected:
+                                        selectedShape.latestTransform = TransformationType.Scaling;
+                                        break;
+                                    case selectedShape.isSelected && !selectedShape.isBorderSelected && !selectedShape.isTransformHandleSelected:
+                                        selectedShape.latestTransform = TransformationType.Translation;
+                                }
                             }
                             break;
                         case CanvasState.ShapeFocused:
@@ -322,10 +330,10 @@ export default function SpacePage() {
                         </ThemedText>
                         <ThemedView style={styles.canvasDrawOptionsSection}>
                             <DrawOption
-                                actionFunction={()=>setStrokeWidth(1)}
+                                actionFunction={()=>setStrokeWidth(5)}
                                 icon={<MaterialIcons name="circle" size={7} color="black" />} />
                             <DrawOption
-                                actionFunction={()=>setStrokeWidth(5)}
+                                actionFunction={()=>setStrokeWidth(10)}
                                 icon={<MaterialCommunityIcons name="circle" size={14} color="black" />} />
                         </ThemedView>
                         <ThemedText

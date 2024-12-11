@@ -18,14 +18,14 @@ export class Shape {
 
     startPoint: Point;
     endPoint: Point;
-    boundingCorners : Point[];
+    boundingCorners : Circle[];
     transformHandle: Circle;
     latestTransform: TransformationType | null;
     transformMatrix: TransformMatrix;
 
     constructor(startPoint: Point, strokeWidth?: number, strokeColor?: string) {
         this.id = Math.random().toString();
-        this.strokeWidth = strokeWidth || 1;
+        this.strokeWidth = strokeWidth || 5;
         this.strokeColor = strokeColor || "black";
         this.boundingCorners = [];
         this.startPoint = startPoint;
@@ -54,9 +54,15 @@ export class Shape {
     }
 
     isCursorOverlappingScalingCorners(currentPoint: Point) {
-        return this.boundingCorners.some(point => {
-            return currentPoint.x >= point.x - CanvasConstants.HANDLE_RADIUS && currentPoint.y >= point.y - CanvasConstants.HANDLE_RADIUS &&
-                currentPoint.x <= point.x + CanvasConstants.HANDLE_RADIUS && currentPoint.y <= point.y + CanvasConstants.HANDLE_RADIUS;
-        });
+        this.boundingCorners.forEach(cornerPoint => {
+            if(
+                currentPoint.x >= cornerPoint.startPoint.x - CanvasConstants.HANDLE_RADIUS && currentPoint.y >= cornerPoint.startPoint.y - CanvasConstants.HANDLE_RADIUS &&
+                currentPoint.x <= cornerPoint.startPoint.x + CanvasConstants.HANDLE_RADIUS && currentPoint.y <= cornerPoint.startPoint.y + CanvasConstants.HANDLE_RADIUS)
+            {
+                cornerPoint.isSelected = true;
+                return true;
+            }
+        })
+        return false;
     }
 }
