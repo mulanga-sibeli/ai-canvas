@@ -54,15 +54,15 @@ export class Shape {
     }
 
     isCursorOverlappingScalingCorners(currentPoint: Point) {
-        this.boundingCorners.forEach(cornerPoint => {
-            if(
+        for (const cornerPoint of this.boundingCorners) {
+            if (
                 currentPoint.x >= cornerPoint.startPoint.x - CanvasConstants.HANDLE_RADIUS && currentPoint.y >= cornerPoint.startPoint.y - CanvasConstants.HANDLE_RADIUS &&
-                currentPoint.x <= cornerPoint.startPoint.x + CanvasConstants.HANDLE_RADIUS && currentPoint.y <= cornerPoint.startPoint.y + CanvasConstants.HANDLE_RADIUS)
-            {
+                currentPoint.x <= cornerPoint.startPoint.x + CanvasConstants.HANDLE_RADIUS && currentPoint.y <= cornerPoint.startPoint.y + CanvasConstants.HANDLE_RADIUS
+            ) {
                 cornerPoint.isSelected = true;
                 return true;
             }
-        })
+        }
         return false;
     }
 }

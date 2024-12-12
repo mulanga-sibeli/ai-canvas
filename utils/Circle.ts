@@ -57,45 +57,42 @@ export class Circle extends Shape {
                     this.transformHandle.startPoint = trace[trace.length - 1];
                     break;
                 case TransformationType.Scaling:
-                    if (true) return;
-                    // Inverse all actions.
-                    // const inverseMatrix = this.transformMatrix.inverse();
-                    // this.startPoint = inverseMatrix.transformPoint(this.startPoint);
-                    // this.endPoint = inverseMatrix.transformPoint(this.endPoint);
-                    // this.boundingCorners = this.boundingCorners.map(point => {
-                    //     return inverseMatrix.transformPoint(point);
-                    // });
-                    // this.transformHandle.startPoint = inverseMatrix.transformPoint(this.transformHandle.startPoint);
-                    //
-                    // // Perform scaling.
-                    // const centerToCurrent = Math.sqrt(Math.pow(trace[trace.length - 1].x - this.startPoint.x, 2) + Math.pow(trace[trace.length - 1].y - this.startPoint.y, 2));
-                    // const scaleFactor = parseFloat((centerToCurrent / this.radius).toFixed(10));
-                    //
-                    // console.log(this.radius, centerToCurrent, scaleFactor);
-                    //
-                    // const scalingMatrix = TransformMatrix.identity().scale(scaleFactor, scaleFactor, this.transformHandle.startPoint);
-                    // this.boundingCorners = this.boundingCorners.map(point => {
-                    //     return scalingMatrix.transformPoint(point);
-                    // });
-                    // this.endPoint = scalingMatrix.transformPoint(this.endPoint);
-                    // this.startPoint = scalingMatrix.transformPoint(this.startPoint);
-                    // this.transformHandle.startPoint = scalingMatrix.transformPoint(this.transformHandle.startPoint);
-                    //
-                    // // Re-apply all previous actions.
-                    // this.startPoint = this.transformMatrix.transformPoint(this.startPoint);
-                    // this.endPoint = this.transformMatrix.transformPoint(this.endPoint);
-                    // this.boundingCorners = this.boundingCorners.map(point => {
-                    //     return this.transformMatrix.transformPoint(point);
-                    // });
-                    // this.transformHandle.startPoint = this.transformMatrix.transformPoint(this.transformHandle.startPoint);
-                    //
-                    // // Update transform matrix with current action.
-                    // this.transformMatrix = this.transformMatrix.scale(scaleFactor, scaleFactor, this.transformHandle.startPoint);
-                    //
-                    // // Update radius to account for changes in start and end point.
-                    // this.radius = Math.sqrt(Math.pow(this.endPoint.x - this.startPoint.x, 2) + Math.pow(this.endPoint.y - this.startPoint.y, 2));
-                    // this.height = this.radius * 2;
-                    // this.width = this.radius * 2;
+                    if (trace.length < 2) return;
+
+                    // Identify the grabbed corner for scaling
+                    const grabbedCornerPoint = this.boundingCorners.find(corner => corner.isSelected);
+                    if (!grabbedCornerPoint) return; // Exit if no corner is selected
+
+                    const dx3 = trace[trace.length - 1].x - grabbedCornerPoint.startPoint.x;
+                    const dy3 = trace[trace.length - 1].y - grabbedCornerPoint.startPoint.y;
+
+                    // Calculate scale factors relative to the transformHandle
+                    const scaleFactorX = (grabbedCornerPoint.startPoint.x + dx3 - this.transformHandle.startPoint.x) /
+                        (grabbedCornerPoint.startPoint.x - this.transformHandle.startPoint.x);
+                    const scaleFactorY = (grabbedCornerPoint.startPoint.y + dy3 - this.transformHandle.startPoint.y) /
+                        (grabbedCornerPoint.startPoint.y - this.transformHandle.startPoint.y);
+
+                    // Apply scaling matrix
+                    const scalingMatrix = TransformMatrix.identity().scale(scaleFactorX, scaleFactorY, this.transformHandle.startPoint);
+
+                    // Transform bounding corners
+                    this.boundingCorners.forEach(corner => {
+                        corner.startPoint = scalingMatrix.transformPoint(corner.startPoint);
+                    });
+
+                    // Transform startPoint, endPoint, and transformHandle
+                    this.startPoint = scalingMatrix.transformPoint(this.startPoint);
+                    this.endPoint = scalingMatrix.transformPoint(this.endPoint);
+                    this.transformHandle.startPoint = scalingMatrix.transformPoint(this.transformHandle.startPoint);
+
+                    // Update shape dimensions
+                    this.radius = Math.sqrt(Math.pow(trace[0].x - this.startPoint.x, 2) + Math.pow(trace[0].y - this.startPoint.y, 2));// Assuming uniform scaling for circular shapes
+                    this.height = this.radius * 2;
+                    this.width  = this.radius * 2;
+
+                    // Update the transformation matrix
+                    this.transformMatrix = this.transformMatrix.scale(scaleFactorX, scaleFactorY, this.transformHandle.startPoint);
+                    break;
             }
 
             ctx.save();
