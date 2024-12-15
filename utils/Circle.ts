@@ -58,40 +58,39 @@ export class Circle extends Shape {
                     break;
                 case TransformationType.Scaling:
                     if (trace.length < 2) return;
+                    let grabbedCornerPoint = this.boundingCorners.find(corner => corner.isSelected);
+                    if (!grabbedCornerPoint) return;
 
-                    // Identify the grabbed corner for scaling
-                    const grabbedCornerPoint = this.boundingCorners.find(corner => corner.isSelected);
-                    if (!grabbedCornerPoint) return; // Exit if no corner is selected
+                    let deltaX = trace[trace.length - 1].x - grabbedCornerPoint.startPoint.x;
+                    let deltaY = trace[trace.length - 1].y - grabbedCornerPoint.startPoint.y;
 
-                    const dx3 = trace[trace.length - 1].x - grabbedCornerPoint.startPoint.x;
-                    const dy3 = trace[trace.length - 1].y - grabbedCornerPoint.startPoint.y;
+                    if (this.boundingCorners.indexOf(grabbedCornerPoint) === 0) {
+                        deltaY *= -1;
+                        deltaX *= -1;
+                    }
+                    if (this.boundingCorners.indexOf(grabbedCornerPoint) === 3) deltaX *= -1;
 
-                    // Calculate scale factors relative to the transformHandle
-                    const scaleFactorX = (grabbedCornerPoint.startPoint.x + dx3 - this.transformHandle.startPoint.x) /
-                        (grabbedCornerPoint.startPoint.x - this.transformHandle.startPoint.x);
-                    const scaleFactorY = (grabbedCornerPoint.startPoint.y + dy3 - this.transformHandle.startPoint.y) /
-                        (grabbedCornerPoint.startPoint.y - this.transformHandle.startPoint.y);
+                    let scaleFactor = grabbedCornerPoint.startPoint.x !== 0 ? deltaX / grabbedCornerPoint.startPoint.x :
+                                      grabbedCornerPoint.startPoint.y !== 0 ? deltaY / grabbedCornerPoint.startPoint.y : 1;
+                    scaleFactor += 1;
+                    const scalingMatrix = TransformMatrix.identity().scale(scaleFactor, scaleFactor, this.startPoint);
 
-                    // Apply scaling matrix
-                    const scalingMatrix = TransformMatrix.identity().scale(scaleFactorX, scaleFactorY, this.transformHandle.startPoint);
-
-                    // Transform bounding corners
                     this.boundingCorners.forEach(corner => {
                         corner.startPoint = scalingMatrix.transformPoint(corner.startPoint);
                     });
 
-                    // Transform startPoint, endPoint, and transformHandle
                     this.startPoint = scalingMatrix.transformPoint(this.startPoint);
                     this.endPoint = scalingMatrix.transformPoint(this.endPoint);
                     this.transformHandle.startPoint = scalingMatrix.transformPoint(this.transformHandle.startPoint);
 
-                    // Update shape dimensions
-                    this.radius = Math.sqrt(Math.pow(trace[0].x - this.startPoint.x, 2) + Math.pow(trace[0].y - this.startPoint.y, 2));// Assuming uniform scaling for circular shapes
+                    this.radius = Math.sqrt(
+                        Math.pow(this.endPoint.x - this.startPoint.x, 2) +
+                        Math.pow(this.endPoint.y - this.startPoint.y, 2)
+                    );
                     this.height = this.radius * 2;
-                    this.width  = this.radius * 2;
+                    this.width = this.radius * 2;
 
-                    // Update the transformation matrix
-                    this.transformMatrix = this.transformMatrix.scale(scaleFactorX, scaleFactorY, this.transformHandle.startPoint);
+                    this.transformMatrix = this.transformMatrix.scale(scaleFactor, scaleFactor, this.transformHandle.startPoint);
                     break;
             }
 

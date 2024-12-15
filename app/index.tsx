@@ -274,36 +274,7 @@ export default function SpacePage() {
 
     return (
         <ThemedView style={styles.mainContainer}>
-            <ThemedView style={styles.header}>
-                <ThemedText
-                    type="Caption"
-                    weight="SemiBold"
-                    lightColor="gray"
-                >
-                    Playground
-                </ThemedText>
-            </ThemedView>
             <ThemedView style={styles.contentSectionContent}>
-                <ThemedView style={styles.leftPanel}>
-                    <ThemedView style={styles.sidePanelButton}>
-                        <Button
-                            title="Text Editor"
-                            type="regular"
-                            lightColor="transparent"
-                            lightTextColor="white"
-                            onPress={() => router.navigate("/create-space")}
-                        />
-                    </ThemedView>
-                    <ThemedView style={styles.sidePanelButton}>
-                        <Button
-                            title="Canvas"
-                            type="regular"
-                            lightColor="transparent"
-                            lightTextColor="white"
-                            onPress={() => router.navigate("/create-space")}
-                        />
-                    </ThemedView>
-                </ThemedView>
                 <ThemedView style={styles.canvas}>
                     <ThemedView style={styles.canvasDrawOptions}>
                         <ThemedText
