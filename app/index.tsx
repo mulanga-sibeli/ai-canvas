@@ -1,12 +1,10 @@
 import {ThemedText} from "@/components/ThemedText";
 import {ThemedInput} from "@/components/ThemedInput";
-import {Button} from "@/components/Button";
 import {DrawOption} from "@/components/DrawOption";
 
 import {Platform, ScrollView, View} from "react-native";
 import React, {LegacyRef, useEffect, useRef, useState} from "react";
 
-import {router} from "expo-router";
 import {MathJax, MathJaxContext} from 'better-react-mathjax';
 import {Entypo, FontAwesome, MaterialCommunityIcons} from "@expo/vector-icons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";

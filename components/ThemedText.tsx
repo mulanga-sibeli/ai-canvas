@@ -17,7 +17,7 @@ export function ThemedText({
   type = "Caption",
   ...rest
 }: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+  const color = useThemeColor({ light: lightColor, dark: lightColor }, "text");
   const fontFamily = { fontFamily: "Poppins-" + weight };
 
   return (
